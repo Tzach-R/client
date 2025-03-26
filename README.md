@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# 📖 Cozy Book Club - Final Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
+**Cozy Book Club** is a full-stack web application where users can **browse, add, and favorite books**. It includes:
+- **User Authentication** (Login & Register)
+- **Book Management** (Add, Edit, Delete)
+- **Favorites Feature** (Save books to favorites)
+- **Dark Aesthetic** UI
+- **Responsive Design** for all screen sizes
 
-## Available Scripts
+## 🛠️ Technologies Used
+- **Frontend:** React, React Router, Axios, Bootstrap
+- **Backend:** Node.js, Express.js, MongoDB, JWT Authentication
+- **Database:** MongoDB (Mongoose ORM)
 
-In the project directory, you can run:
+## 🔧 Installation & Setup
+### **1️⃣ Clone the Project**
+```sh
+ git clone https://github.com/your-repo/final-book-club.git
+```
 
-### `npm start`
+### **2️⃣ Install Backend (Server)**
+```sh
+cd server
+npm install
+```
+Create a `.env` file in the `server` folder and add:
+```sh
+MONGO_URI=mongodb://localhost:27017/bookclub
+JWT_SECRET=yourSecretKeyHere
+```
+Start the server:
+```sh
+node server.js
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **3️⃣ Install Frontend (Client)**
+```sh
+cd ../client
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔑 Features & Functionality
+✅ **User Registration & Login** (JWT Authentication)  
+✅ **Book Management** (CRUD Operations)  
+✅ **Favorite Books** (Save books to a user’s profile)  
+✅ **Responsive UI** (Dark Theme)  
+✅ **Secure API** (Authentication & Authorization)  
 
-### `npm test`
+## 🎨 UI & Design
+The project follows a **Dark Cosy aesthetic**, with **earthy tones, serif fonts, and cozy book-like visuals**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Future Improvements
+- Implement an **Admin Panel** for book moderation.
+- Add **User Profiles** with avatars and book lists.
+- Improve **Search & Filtering** features for books.
 
-### `npm run build`
+## 👨‍💻 Authors
+Developed by me as part of a final project for a fullstack development course.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📌 **Enjoy building your online book club!** 🚀📚
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
