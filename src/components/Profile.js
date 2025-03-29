@@ -1,17 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 
 function Profile() {
     const [user, setUser] = useState(null);
     const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
-        const userId = 'someUserId'; // Replace with actual user ID from authentication
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        const decoded = jwt_decode(token);
+        const userId = decoded.id;
+
         axios.get(`/user/${userId}`).then((res) => {
             setUser(res.data);
             setFavorites(res.data.favorites);
         });
     }, []);
+
+    function removeFromFavorites(bookId) {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+
+        const decoded = jwt_decode(token);
+        const userId = decoded.id;
+
+        axios.post('/favorites/remove', { userId, bookId }).then(() => {
+            alert('Book removed from favorites!');
+            setFavorites(favorites.filter(book => book._id !== bookId));
+        });
+    }
 
     return (
         <div>
@@ -30,12 +48,6 @@ function Profile() {
             )}
         </div>
     );
-}
-
-function removeFromFavorites(bookId) {
-    axios.post('/favorites/remove', { userId: 'someUserId', bookId }).then(() => {
-        alert('Book removed from favorites!');
-    });
 }
 
 export default Profile;

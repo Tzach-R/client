@@ -8,8 +8,11 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/login', { email, password });
+            const response = await axios.post('/login', { email, password });
+            localStorage.setItem('token', response.data.token);
+
             alert('Login Successful!');
+            window.location.href = '/profile';
         } catch (err) {
             alert('Login Failed!');
         }
