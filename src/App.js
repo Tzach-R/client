@@ -3,6 +3,8 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
+import BooksPage from "./components/BooksPage";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
           <Route path="/" element={<BookList />} />
           <Route path="/add" element={<AddBook />} />
           <Route path="/favorites" element={<FavoriteBooks />} />
+          <Route path="/books" element={<BooksPage />} />
         </Routes>
       </div>
     </Router>
